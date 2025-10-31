@@ -1,0 +1,260 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  height: 100%;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.hover-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Navbar */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.25);
+}
+
+.btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.25);
+}
+
+/* Badges */
+.badge {
+  padding: 0.5rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Forms */
+.form-control,
+.form-select {
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Input Group */
+.input-group-lg {
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-group-lg .form-control {
+  border-radius: 30px 0 0 30px;
+  border: none;
+  padding: 1rem;
+}
+
+.input-group-lg .btn {
+  border-radius: 0 30px 30px 0;
+  border: none;
+}
+
+/* Alerts */
+.alert {
+  border-radius: 8px;
+  border: none;
+  padding: 1rem 1.5rem;
+}
+
+/* Tables */
+.table-hover tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+/* Sticky Top */
+.sticky-top {
+  top: 76px;
+}
+
+/* List Group */
+.list-group-item {
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.list-group-item.active {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+/* Hero Section */
+.bg-light {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.bg-light h1 {
+  color: white;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+/* Loading Spinner */
+.spinner-border {
+  color: #0d6efd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sticky-top {
+    position: static;
+    top: 0;
+  }
+
+  .card-img-top {
+    height: 150px;
+  }
+
+  .input-group-lg {
+    border-radius: 0;
+  }
+
+  .input-group-lg .form-control,
+  .input-group-lg .btn {
+    border-radius: 0;
+  }
+}
+
+/* Status Colors */
+.bg-pending {
+  background-color: #ffc107 !important;
+}
+
+.bg-confirmed {
+  background-color: #17a2b8 !important;
+}
+
+.bg-preparing {
+  background-color: #007bff !important;
+}
+
+.bg-ready {
+  background-color: #28a745 !important;
+}
+
+.bg-delivering {
+  background-color: #6c757d !important;
+}
+
+.bg-delivered {
+  background-color: #28a745 !important;
+}
+
+.bg-cancelled {
+  background-color: #dc3545 !important;
+}
+
+/* Card Hover Effects */
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Text Utilities */
+.text-muted {
+  color: #6c757d !important;
+}
+
+.text-warning {
+  color: #ffc107 !important;
+}
+
+/* Footer Style */
+footer {
+  background-color: #212529;
+  color: #fff;
+  padding: 2rem 0;
+  margin-top: 3rem;
+  border-top: 1px solid #495057;
+}
+
+/* Animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: slideIn 0.3s ease;
+}
