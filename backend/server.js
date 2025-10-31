@@ -29,10 +29,7 @@ app.use(express.urlencoded({ extended: true }));
 // Make io available to routes
 app.set('io', io);
 
-// Database Connection
-db();
-
-// Routes
+// Routes - Register BEFORE database connection so they're available
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/restaurants', require('./routes/restaurantRoutes'));
 app.use('/api/menu', require('./routes/menuRoutes'));
@@ -44,8 +41,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/health', (req, res) => {
-  res.json({ success: true, message: 'Backend is running', port: PORT });
+  res.json({ success: true, message: 'Backend is running', port: process.env.PORT || 5000 });
 });
+
+// Database Connection - This happens after routes so backend stays responsive
+db();
 
 // Socket.IO Event Handlers
 io.on('connection', (socket) => {
