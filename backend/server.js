@@ -5,6 +5,14 @@ const socketIO = require('socket.io');
 require('dotenv').config();
 const db = require('./config/db');
 
+// Check required environment variables
+const requiredEnvVars = ['JWT_SECRET'];
+const missingVars = requiredEnvVars.filter(v => !process.env[v]);
+if (missingVars.length > 0) {
+  console.warn(`⚠️  Missing required environment variables: ${missingVars.join(', ')}`);
+  console.warn('⚠️  Backend will run but some features may not work properly.');
+}
+
 const app = express();
 const server = http.createServer(app);
 
@@ -82,5 +90,10 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`\n✅ Server running on port ${PORT}`);
+  console.log(`\n📝 API Documentation:`);
+  console.log(`  - Base URL: http://localhost:${PORT}`);
+  console.log(`  - Auth API: POST http://localhost:${PORT}/api/auth/login`);
+  console.log(`  - Health Check: GET http://localhost:${PORT}/api/health`);
+  console.log(`\n`);
 });
