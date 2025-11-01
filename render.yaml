@@ -2,8 +2,11 @@ services:
   - type: web
     name: frontend
     runtime: node
-    buildCommand: cd frontend && npm install && npm run build
-    startCommand: cd frontend && node server.js
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: node server.js
     envVars:
       - key: NODE_ENV
         value: production
+      - key: REACT_APP_API_URL
+        value: https://food-delivery-system-eici.onrender.com
