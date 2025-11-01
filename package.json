@@ -1,0 +1,12 @@
+{
+  "name": "food-delivery-system",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build",
+    "start": "node server.js",
+    "dev": "concurrently \"cd backend && npm start\" \"cd frontend && npm start\""
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
